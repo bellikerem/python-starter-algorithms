@@ -5,4 +5,6 @@ while i<=not_sayisi:
     notlar = int(input(f"{i}. ders notunu giriniz: "))
     girilen_notlar.append(notlar)
     i += 1
-print(girilen_notlar)
+notlar_toplamı = sum(girilen_notlar)
+ortalama = notlar_toplamı/not_sayisi
+print(ortalama)
