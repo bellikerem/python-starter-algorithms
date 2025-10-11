@@ -1,25 +1,47 @@
 i = 1
 girilen_notlar = []
-not_sayisi = int(input("Gireceğiniz not sayısını giriniz: "))
+while True:
+    try:
+        not_sayisi_input = (input("Gireceğiniz not sayısını giriniz: "))
+        not_sayisi = int(not_sayisi_input)
+        if not_sayisi < 0:
+            print("Hata: Lütfen pozitif tam sayı girişi yapınız")
+            continue
+        break
+    except ValueError:
+        print("Hata: Lütfen tam sayı girişi yapınız")
 while i<=not_sayisi:
-    notlar = int(input(f"{i}. ders notunu giriniz: "))
-    girilen_notlar.append(notlar)
-    i += 1
+    try:
+        notlar_input = (input(f"{i}. ders notunu giriniz: "))
+        notlar = int(notlar_input)
+        if notlar < 0:
+            print("Hata: Lütfen pozitif tam sayı girişi yapınız")
+            continue
+        girilen_notlar.append(notlar)
+        i += 1
+    except ValueError:
+        print("Hata: Lütfen tam sayı girişi yapınız")
+        
+
+
 notlar_toplamı = sum(girilen_notlar)
 ortalama = notlar_toplamı/not_sayisi
+
+
 if ortalama>=90:
     harf_notu = "AA"
-elif ortalama<90 and ortalama>=80:
+elif ortalama>=80:
     harf_notu = "BA"
-elif ortalama<80 and ortalama>=70:
+elif ortalama>=70:
     harf_notu = "BB"
-elif ortalama<70 and ortalama>=60:
+elif ortalama>=60:
     harf_notu = "CC"
-elif ortalama<60 and ortalama>=50:
+elif ortalama>=50:
     harf_notu = "DC"
 else:
     harf_notu = "FF"
 
+print("\n--- SONUÇLAR ---")
 print(f"Girdiğiniz notlar: {girilen_notlar}")
 print(f"Ortalamanız: {int(ortalama)}")
 print(f"Harf notunuz: {harf_notu}")
