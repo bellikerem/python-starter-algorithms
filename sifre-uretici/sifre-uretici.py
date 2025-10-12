@@ -13,13 +13,16 @@ while True:
         kullanici_tercihi_input = input("Banka kartı şifresi oluşturmak için 1'i diğer şifreler için 2'yi tuşlayınız: ")
         kullanici_tercihi = int(kullanici_tercihi_input)
         if kullanici_tercihi != 1 and kullanici_tercihi != 2:
+            print("\n--- SONUÇ ---")
             print("Lütfen 1 yada 2 yi tuşlayınız")
+            continue
         elif kullanici_tercihi == 1:
             i = 0
             sifre = ""
             while i<4:
                 sifre += random.choice(rakamlar)
                 i += 1
+            print("\n--- SONUÇ ---")
             print(f"Banka kartı şifreniz: {sifre}")
             break
         else:
@@ -28,10 +31,12 @@ while True:
                     sifre_uzunluğu_input = input("Lütfen şifre uzunluğunu belirleyiniz: ")
                     sifre_uzunluğu = int(sifre_uzunluğu_input)
                     if sifre_uzunluğu < 8 or sifre_uzunluğu > 18:
+                        print("\n--- SONUÇ ---")
                         print("Lütfen 8 ile 18 arasında bir sayı giriniz")
                         continue
                     break
                 except ValueError:
+                    print("\n--- SONUÇ ---")
                     print("Lütfen tam sayı girişi yapınız")
             while True:
                 try:
@@ -42,97 +47,35 @@ while True:
                     "her 2 si için 3'ü tuşlayınız: ")
                     kullanici_tercihi2 = int(kullanici_tercihi_input2)
                     if kullanici_tercihi2 != 1 and kullanici_tercihi2 != 2 and kullanici_tercihi2 != 3:
+                        print("\n--- SONUÇ ---")
                         print("Lütfen 1, 2 yada 3'ü tuşlayınız")
                         continue
                     break
                 except ValueError:
+                    print("\n--- SONUÇ ---")
                     print("Lütfen tam sayı girişi yapınız")
+            sifre_listesi = [random.choice(büyük_harfler) , random.choice(kücük_harfler)]
+            kalan_uzunluk = sifre_uzunluğu-2
             if kullanici_tercihi2 == 1:
-                while True:
-                    büyük_harf_icin = random.randint(1,sifre_uzunluğu)
-                    kücük_harf_icin = random.randint(1,sifre_uzunluğu-büyük_harf_icin)
-                    if büyük_harf_icin + kücük_harf_icin == sifre_uzunluğu:
-                        continue
-                    else:
-                        break
-                rakamlar_icin = sifre_uzunluğu-(büyük_harf_icin + kücük_harf_icin)
-                i = 0
-                sifre = ""
-                while i<büyük_harf_icin:
-                    sifre += random.choice(büyük_harfler)
-                    i += 1
-                i = 0
-                while i<kücük_harf_icin:
-                    sifre += random.choice(kücük_harfler)
-                    i += 1
-                i = 0
-                while i<rakamlar_icin:
-                    sifre += random.choice(rakamlar)
-                    i += 1
-                liste_sifre = list(sifre)
-                random.shuffle(liste_sifre)
-                gercek_sifre = "".join(liste_sifre)
-                print(f"Şifreniz: {gercek_sifre}")
-                break
+                kullanilacak_havuz = büyük_harfler + kücük_harfler + rakamlar
+                sifre_listesi.append(random.choice(rakamlar))
+                kalan_uzunluk -= 1
             elif kullanici_tercihi2 == 2:
-                while True:
-                    büyük_harf_icin = random.randint(1,sifre_uzunluğu)
-                    kücük_harf_icin = random.randint(1,sifre_uzunluğu-büyük_harf_icin)
-                    if büyük_harf_icin + kücük_harf_icin == sifre_uzunluğu:
-                        continue
-                    else:
-                        break
-                ozel_karakter_icin = sifre_uzunluğu-(büyük_harf_icin + kücük_harf_icin)
-                i = 0
-                sifre = ""
-                while i<büyük_harf_icin:
-                    sifre += random.choice(büyük_harfler)
-                    i += 1
-                i = 0
-                while i<kücük_harf_icin:
-                    sifre += random.choice(kücük_harfler)
-                    i += 1
-                i = 0
-                while i<ozel_karakter_icin:
-                    sifre += random.choice(ozel_karakter)
-                    i += 1
-                liste_sifre = list(sifre)
-                random.shuffle(liste_sifre)
-                gercek_sifre = "".join(liste_sifre)
-                print(f"Şifreniz: {gercek_sifre}")
-                break
+                kullanilacak_havuz = büyük_harfler + kücük_harfler + ozel_karakter
+                sifre_listesi.append(random.choice(ozel_karakter))
+                kalan_uzunluk -= 1
             else:
-                while True:
-                    büyük_harf_icin = random.randint(1,sifre_uzunluğu)
-                    kücük_harf_icin = random.randint(1,sifre_uzunluğu-büyük_harf_icin)
-                    rakamlar_icin = random.randint(1, sifre_uzunluğu-(büyük_harf_icin + kücük_harf_icin))
-                    if büyük_harf_icin + kücük_harf_icin + rakamlar_icin == sifre_uzunluğu:
-                        continue
-                    else:
-                        break
-                ozel_karakter_icin = sifre_uzunluğu-(büyük_harf_icin + kücük_harf_icin + rakamlar_icin)
-                i = 0
-                sifre = ""
-                while i<büyük_harf_icin:
-                    sifre += random.choice(büyük_harfler)
-                    i += 1
-                i = 0
-                while i<kücük_harf_icin:
-                    sifre += random.choice(kücük_harfler)
-                    i += 1
-                i = 0
-                while i<rakamlar_icin:
-                    sifre += random.choice(rakamlar)
-                    i += 1
-                i = 0
-                while i<ozel_karakter_icin:
-                    sifre += random.choice(ozel_karakter)
-                    i += 1
-                liste_sifre = list(sifre)
-                random.shuffle(liste_sifre)
-                gercek_sifre = "".join(liste_sifre)
-                print(f"Şifreniz: {gercek_sifre}")
-                break
-        break
+                kullanilacak_havuz = büyük_harfler + kücük_harfler + rakamlar + ozel_karakter
+                sifre_listesi.extend([random.choice(rakamlar), random.choice(ozel_karakter)])
+                kalan_uzunluk -= 2
+
+            
+            sifre_listesi.extend(random.choices(kullanilacak_havuz, k=kalan_uzunluk))
+            random.shuffle(sifre_listesi)
+            gercek_sifre = "".join(sifre_listesi)
+            print("\n--- SONUÇ ---")
+            print(f"Şifreniz: {gercek_sifre}") 
+            break
     except ValueError:
+        print("\n--- SONUÇ ---")
         print("Lütfen tam sayı girişi yapınız")
