@@ -14,8 +14,8 @@ while i<=not_sayisi:
     try:
         notlar_input = (input(f"{i}. ders notunu giriniz: "))
         notlar = int(notlar_input)
-        if notlar < 0:
-            print("Hata: Lütfen pozitif tam sayı girişi yapınız")
+        if notlar < 0 or notlar > 100:
+            print("Hata: Lütfen 0 - 100 arası tam sayı girişi yapınız")
             continue
         girilen_notlar.append(notlar)
         i += 1
