@@ -10,8 +10,8 @@ while True:
     try:
         sifre_uzunluğu_input = input("Lütfen oluşturulacak şifrenin uzunluğunu giriniz: ")
         sifre_uzunluğu = int(sifre_uzunluğu_input)
-        if sifre_uzunluğu <= 0:
-            print("Lütfen 0'dan büyük bir sayı girişi yapınız")
+        if sifre_uzunluğu <8 or sifre_uzunluğu>18 :
+            print("Lütfen 8 ile 18 arasında bir sayı girişi yapınız")
             continue
         break
     except ValueError:
