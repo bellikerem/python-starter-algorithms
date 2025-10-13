@@ -35,5 +35,10 @@ with open("kelime-sayacı/kelime_sayacı.txt" , "r" , encoding = "utf-8") as fil
         else:
             sozluk[i] = 1
 
-print("\n--- SONUÇ ---")
-print(sozluk)
+kelime_ciftleri = sozluk.items()
+sirali_kelime_ciftleri = sorted(kelime_ciftleri , key = lambda item : item[1], reverse=True)
+
+
+print("\n--- En Sık Geçen 10 Kelime ---")
+for kelime, frekans in sirali_kelime_ciftleri[:10]:
+    print(f"'{kelime}': {frekans} kez")
