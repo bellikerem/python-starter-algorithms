@@ -33,20 +33,58 @@ while True:
 
 def rastgele_kelime_secimi(kategori):
     global rastgele_kelime
+    global uygun_kelime
     global gizlenmis_kelime
     rastgele_kelime = random.choice(kelime_havuzu[kategori])
-    gizlenmis_kelime = ["_"]*len(rastgele_kelime)
-    print(gizlenmis_kelime)
+    uygun_kelime = rastgele_kelime.lower()
+    gizlenmis_kelime = ["_"]*len(uygun_kelime)
+
+def oyun_döngüsü():
+    global harf_tahmin
+    global can_hakkı
+    global harf_bulundu
+    print("5 Can hakkınız var. Amacınız can hakkınız bitmeden kelimeyi bulmak. Bol şans :)")
+    while True:
+        print(gizlenmis_kelime)
+        if "_" not in gizlenmis_kelime:
+            print(f"TEBRİKLER {uygun_kelime} KELİMESİNİ DOĞRU TAHMİN ETTİNİZ")
+            break
+        if can_hakkı == 0:
+            print(f"MAALESEF KAYBETTİNİZ. DOĞRU KELİME: {uygun_kelime}")
+            break
+        harf_tahmin = input("Lütfen küçük harf girişi yapınız: ")
+        if harf_tahmin not in ["a","b","c","ç","d","e","f","g","ğ","h","ı","i","j","k","l","m","n","o","ö","p","r","s","ş","t","u","ü",
+                               "v","y","z"]:
+            print("Lütfen küçük harf girişi yapınız")
+            continue
+        if harf_tahmin in uygun_kelime:
+            print("DOĞRU TAHMİN")
+            harf_bulundu = False
+            for i, harf in enumerate(uygun_kelime):
+                if harf == harf_tahmin:
+                    gizlenmis_kelime[i] = harf
+                    harf_bulundu = True
+        else:
+            print("YANLIŞ TAHMİN")
+            can_hakkı -= 1
+                
+
 
 if secim == 1:
     rastgele_kelime_secimi("İsim")
+    oyun_döngüsü()
 elif secim == 2:
     rastgele_kelime_secimi("Şehir")
+    oyun_döngüsü()
 elif secim == 3:
     rastgele_kelime_secimi("Ülke")
+    oyun_döngüsü()
 elif secim == 4:
     rastgele_kelime_secimi("Hayvan")
+    oyun_döngüsü()
 elif secim == 5:
     rastgele_kelime_secimi("Bitki")
+    oyun_döngüsü()
 else:
     rastgele_kelime_secimi("Eşya")
+    oyun_döngüsü()
