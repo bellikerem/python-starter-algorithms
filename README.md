@@ -30,10 +30,10 @@ Bu depo, Bilgisayar Mühendisliği 1. sınıf öğrencisi olarak Python öğreni
 ---
 
 ## 🚀 Nasıl Çalıştırılır?
-1. **Projeyi Klonlayın:** `git clone [REPO ADRESİNİZ]`
+1. **Projeyi Klonlayın:** `git clone [https://github.com/bellikerem/python-starter-algorithms]`
 2. **Çalıştırın:** İlgili klasöre gidin ve `python [dosya_adı].py` komutunu terminalde çalıştırın.
 
 ---
 
 ### 🔗 İletişim
-[GitHub Profilinize] | [LinkedIn Profilinize]
+[https://github.com/bellikerem] | [https://www.linkedin.com/in/keremcanbelli]
