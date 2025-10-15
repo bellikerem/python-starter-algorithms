@@ -5,7 +5,7 @@ sozluk = {
 }
 
 print("\n--- Kelime Sayacı ---")
-file = open("kelime-sayacı/kelime_sayacı.txt" , "w" , encoding = "utf-8")
+file = open("kelime_sayacı_cli/kelime_sayacı.txt" , "w" , encoding = "utf-8")
 while True:
     try:
         secenek_input = input("Lütfen dosyaya girdi yapınız. eğer yaptıysanız 1'i tuşlayınız: ")
@@ -20,7 +20,7 @@ file.close()
 
 
 
-with open("kelime-sayacı/kelime_sayacı.txt" , "r" , encoding = "utf-8") as file1:
+with open("kelime_sayacı_cli/kelime_sayacı.txt" , "r" , encoding = "utf-8") as file1:
     kelime_listesi = []
     for satır in file1:
         satır_kelimeleri = satır.lower().split()
