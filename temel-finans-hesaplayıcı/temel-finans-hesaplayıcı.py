@@ -21,10 +21,9 @@ def sayi_kontrolü(prompt,tip):
             if deger<=0:
                 print("Lütfen 0'dan büyük bir sayı giriniz")
                 continue
-            return
+            return deger
         except ValueError:
             print("Lütfen tam sayı girişi yapınız")
-
 
 def basit_faiz_hesaplayici():
     ana_para = sayi_kontrolü("Lütfen para miktarını (TL) giriniz: ", int)
@@ -33,14 +32,26 @@ def basit_faiz_hesaplayici():
     faiz_farki = ana_para * (faiz_orani/100) * süre
     nihai_tutar = faiz_farki + ana_para
     print("\n--- SONUÇ ---")
-    print(f"Faiz farkı: {faiz_farki}")
-    print(f"Nihai tutar: {nihai_tutar}")
+    print(f"Faiz farkı: {faiz_farki} TL")
+    print(f"Nihai tutar: {nihai_tutar} TL")
+
+def taksit_hesapla():
+    kredi_miktari = sayi_kontrolü("Lütfen kredi miktarını giriniz: ", int)
+    faiz_orani = sayi_kontrolü("Lütfen yıllık faiz oranını (%) giriniz: ", float)
+    süre = sayi_kontrolü("Lütfen süreyi (ay) giriniz: ", int)
+    faiz_orani = faiz_orani/(100*12)
+    bölüm_üst = faiz_orani*((1 + faiz_orani)**süre)
+    bölüm_alt = ((1 + faiz_orani)**süre) - 1
+    bölüm = bölüm_üst/bölüm_alt
+    aylik_taksit = kredi_miktari * bölüm
+    print("\n--- SONUÇ ---")
+    print(f"Aylık kredi taksit ücretiniz {aylik_taksit} TL")
 
 if kullanici_secimi == 1:
     basit_faiz_hesaplayici()
 if kullanici_secimi == 2:
-    None
+    taksit_hesapla()
 if kullanici_secimi == 3:
     None
 else:
-    quit
+    SystemExit
