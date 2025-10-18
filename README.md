@@ -1,39 +1,61 @@
-# 🐍 Python Başlangıç Algoritmaları ve CLI Uygulamaları
+# 🐍 Python Starter Algorithms and CLI Applications
 
-## ✨ Proje Özeti
-Bu depo, Bilgisayar Mühendisliği 1. sınıf öğrencisi olarak Python öğrenimimin temelini ve algoritma mantığımı pekiştirmek amacıyla geliştirdiğim Command Line Interface (CLI) uygulamalarını içerir.
+## ✨ Project Overview
+This repository contains a collection of **Command Line Interface (CLI)** applications developed to strengthen my **Python fundamentals** and **algorithmic thinking** as a **1st-year Computer Engineering student**.
 
-**Ana Hedef:** Python veri yapıları (Listeler, Sözlükler), döngüler, karar yapıları ve fonksiyonel programlama becerilerini kanıtlamak.
-
-## 🛠️ Uygulamalar ve Kazanımlar (5 Proje)
-
-### 1. 📊 Not Hesaplama CLI
-- **Kazanım:** Temel algoritmik mantık, sayısal girdi doğrulama (0-100 aralığı), if/elif/else karar yapısı.
-- **Dosya Yolu:** `/not_hesaplama_cli`
-
-### 2. 🔑 Şifre Üretici CLI
-- **Kazanım:** Python'da string (metin) manipülasyonu, `random` modülü kullanımı, zorunlu karakter tipini garantileme mantığı.
-- **Dosya Yolu:** `/sifre_ureteci_cli`
-
-### 3. 💬 Kelime Sayacı ve Frekans Analizi CLI
-- **Kazanım:** Dosya İşlemleri (I/O), veri temizliği (NLP temeli), **Sözlük** veri yapısını kullanarak frekans sayma algoritması.
-- **Dosya Yolu:** `/kelime_sayacı_cli`
-
-### 4. 🤠 Adam Asmaca Oyunu CLI
-- **Kazanım:** Oyun akışı için while döngüsü ve boolean mantığı, listelerle dinamik kelime gizleme/açma. Güçlü Problem Çözme pratiği.
-- **Dosya Yolu:** `/adam_asmaca_cli`
-
-### 5. 💰 Temel Finans Hesaplayıcı CLI
-- **Kazanım:** Modüler ve fonksiyonel programlama (`def` kullanımı), hata yönetimi (try/except), karmaşık formülleri (Basit Faiz, Taksit) uygulamada yetkinlik.
-- **Dosya Yolu:** `/finans_hesaplayici_cli`
+**🎯 Main Goal:** Demonstrate proficiency in Python data structures (Lists, Dictionaries), loops, conditionals, and functional programming.
 
 ---
 
-## 🚀 Nasıl Çalıştırılır?
-1. **Projeyi Klonlayın:** `git clone [https://github.com/bellikerem/python-starter-algorithms]`
-2. **Çalıştırın:** İlgili klasöre gidin ve `python [dosya_adı].py` komutunu terminalde çalıştırın.
+## 🛠️ Applications and Key Learnings (5 Projects)
+
+### 1. 📊 Grade Calculator CLI
+- **Key Learning:** Basic algorithmic logic, numeric input validation (0–100 range), and use of conditional statements (`if/elif/else`).
+- **Path:** `/not_hesaplama_cli`
 
 ---
 
-### 🔗 İletişim
-[https://github.com/bellikerem] | [https://www.linkedin.com/in/keremcanbelli]
+### 2. 🔑 Password Generator CLI
+- **Key Learning:** String manipulation, `random` module usage, and logic to ensure mandatory character types.
+- **Path:** `/sifre_ureteci_cli`
+
+---
+
+### 3. 💬 Word Counter & Frequency Analyzer CLI
+- **Key Learning:** File I/O operations, data cleaning (NLP fundamentals), and word frequency counting using **dictionary** structures.
+- **Path:** `/kelime_sayacı_cli`
+
+---
+
+### 4. 🤠 Hangman Game CLI
+- **Key Learning:** Game flow management with `while` loops and boolean logic, dynamic word revealing using lists, and enhanced problem-solving practice.
+- **Path:** `/adam_asmaca_cli`
+
+---
+
+### 5. 💰 Basic Finance Calculator CLI
+- **Key Learning:** Modular and functional programming (`def` usage), error handling (`try/except`), and applying financial formulas (Simple Interest, Installment calculations).
+- **Path:** `/finans_hesaplayici_cli`
+
+---
+
+## 🚀 How to Run
+1. **Clone the Repository:**  
+   ```bash
+   git clone https://github.com/bellikerem/python-starter-algorithms
+   cd [project_folder]
+   python [file_name].py
+
+---
+
+### 🔗 Contact Me
+<p align="left">
+  <a href="https://www.linkedin.com/in/keremcanbelli" target="_blank">LinkedIn</a>
+  |
+  <a href="mailto:k.belli.eng@gmail.com">E-posta</a>
+</p>
+
+---
+1. **Clone the Repository:**  
+   ```bash
+   git clone https://github.com/bellikerem/python-starter-algorithms
