@@ -56,6 +56,3 @@ This repository contains a collection of **Command Line Interface (CLI)** applic
 </p>
 
 ---
-1. **Clone the Repository:**  
-   ```bash
-   git clone https://github.com/bellikerem/python-starter-algorithms
