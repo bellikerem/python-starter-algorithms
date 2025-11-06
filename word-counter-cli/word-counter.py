@@ -2,6 +2,7 @@
     
     Developer: Kerem Can Belli
     Project: Python Starter Algorithms and CLI Applications
+    Subproject: Word Counter
     Description: Updated English version with structured comments
     Last Review: November 2025
 
