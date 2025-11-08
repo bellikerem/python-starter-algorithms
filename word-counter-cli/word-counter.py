@@ -8,11 +8,15 @@
 
 """
 
+##########################################################################
+
 import string
 
 word_counts = {
 
 }
+
+##########################################################################
 
 print("\n--- WORD COUNTER ---")
 
@@ -37,6 +41,8 @@ while True:
     except ValueError:
         print("Please input an integer.")
 file.close() # "word-counter.txt" file is closed.
+
+##########################################################################
 
 """
 
@@ -67,6 +73,8 @@ with open("python-starter-algorithms/word-counter/word-counter.txt" , "r" , enco
             word_counts[word] = 1
 
 # "word-counter.txt" file is closed.
+
+##########################################################################
 
 """
 

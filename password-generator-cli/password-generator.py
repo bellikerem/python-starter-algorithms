@@ -8,6 +8,8 @@
 
 """
 
+##########################################################################
+
 import random
 
 """
@@ -25,7 +27,7 @@ lower_case_letters = ["a","b","c","d","e","f","g","h","j","k","l",              
 numbers = ["0","1","2","3","4","5","6","7","8","9"]                                         #|
 special_characters = ["!","@","#","$","%","^","&","*","?"]                                  #|
 
-
+##########################################################################
 
 print("\n--- PASSWORD GENERATOR ---")
 
@@ -63,6 +65,8 @@ while True:
         else:
 
     # PROJECT'S MAIN MENU FINISHED
+
+##########################################################################
 
             """
                 
@@ -105,6 +109,8 @@ while True:
                     print("Please input an integer.")
 
     # PROJECT'S CHOICES SECTION FINISHED
+
+    ##########################################################################
 
             """
 
@@ -152,6 +158,8 @@ while True:
             break                                                                                          #|
 
     # PROJECT'S PASSWORD GENERATOR AND OUTPUT SECTION FINISHED
+
+##########################################################################
 
     except ValueError:
         print("\n--- RESULT ---")

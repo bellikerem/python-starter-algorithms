@@ -8,9 +8,13 @@
 
 """
 
+##########################################################################
+
 # Fundamental variables are identified
 grade_counter = 1
 grade_list = []
+
+##########################################################################
 
 """
 
@@ -51,6 +55,8 @@ while grade_counter<=grade_amount:
 sum_of_grades = sum(grade_list)
 average = sum_of_grades/grade_amount
 
+##########################################################################
+
 """
 
     Letter Grade Section:
@@ -72,6 +78,7 @@ elif average>=50:
 else:
     letter_grade = "FF"
 
+##########################################################################
 
 """
 

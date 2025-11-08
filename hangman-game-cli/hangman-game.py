@@ -53,7 +53,7 @@ while True:
         "Press 3 for country \n" \
         "Press 4 for animal \n" \
         "Press 5 for herb \n" \
-        "Press 6 for furniture: ")
+        "Press 6 for furniture: ") # Users decide the game's category.
         choice = int(choice_input)
         if choice not in [1,2,3,4,5,6]:
             print("Enter an integer between 1 - 6.")
@@ -77,9 +77,9 @@ def random_word_choice(category):
 
     """
 
-    random_choice = random.choice(word_pool[category])
-    proper_word = random_choice.lower()
-    secret_word = ["_"]*len(proper_word)
+    random_choice = random.choice(word_pool[category]) # The game's word is selected randomly depends on users preference.
+    proper_word = random_choice.lower() # All letters in the word is converted to lower case.
+    secret_word = ["_"]*len(proper_word) # The word is hidden by using "_" and changed to "secret_word".
 
     return proper_word, secret_word
 
@@ -96,18 +96,18 @@ def game_loop(proper_word, secret_word, guess):
 
     """
 
-    print("You have 5 guesses. The goal is to find the secret word before your guesses run out.")
+    print("You have 5 guesses. The goal is to find the secret word before your guesses run out.") # The goal and guesses are showed.
     while True:
         print(secret_word)
         if "_" not in secret_word:
-            print(f"CONGRATULATIONS! YOU FIND THE SECRET WORD: {proper_word}")
+            print(f"CONGRATULATIONS! YOU FIND THE SECRET WORD: {proper_word}") # Congratulations and loss messages are displayed.
             break
         if guess == 0:
-            print(f"UNFORTUNATELY YOU LOST. THE SECRET WORD IS: {proper_word}")
+            print(f"UNFORTUNATELY YOU LOST. THE SECRET WORD IS: {proper_word}") # Congratulations and loss messages are displayed.
             break
         letter_guess = input("Enter one of the lower case letters: ")
         if letter_guess not in ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u",
-                               "v","y","z","x","q","w"]:
+                               "v","y","z","x","q","w"]: # Letter that users guess is checked whether it is in word or not.
             print("Please input one of the lower case letters.")
             continue
         if letter_guess in proper_word:
@@ -119,7 +119,7 @@ def game_loop(proper_word, secret_word, guess):
                     letter_check = True
         else:
             print("WRONG GUESS")
-            guess -= 1
+            guess -= 1 # guess variable is reduced if users make wrong letter guess.
             print(f"GUESS: {guess}")
     return guess
 

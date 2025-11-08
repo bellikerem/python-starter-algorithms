@@ -25,7 +25,7 @@ while True:
         user_choice_input = input("Press 1 for basic interest calculator: \n" \
         "Press 2 for installment calculator: \n" \
         "Press 3 for VAT calculator: \n" \
-        "Press 4 to quit: ")
+        "Press 4 to quit: ") # It is questioned what users want which option.
         user_choice = int(user_choice_input) # user_choice_input is converted to integer.
         if user_choice not in [1,2,3,4]:
             print("Enter one of the numbers that you see on the screen.")
@@ -75,9 +75,12 @@ def basic_interest_calculator():
     """
 
     print("\n--- BASIC INTEREST CALCULATOR ---")
+    # Base money, interest rate and time values are wanted from users in this function.
     base_money = check_number("Enter your base money amount (TL): ", int)
     interest_rate = check_number("Enter your annual interest rate (%): ", float)
     time = check_number("Enter time (month): ", int)
+
+    # Interest difference and final amount are calculated and printed.
     interest_difference = base_money * (interest_rate/100) * (time/12)
     final_amount = interest_difference + base_money
 
@@ -99,9 +102,13 @@ def installment_calculator():
     """
 
     print("\n--- INSTALLMENT CALCULATOR ---")
+
+    # Credit amount, interest rate and time are wanted from users in this function
     credit_amount = check_number("Enter your credit amount: ", int)
     interest_rate = check_number("Enter your annual interest rate (%): ", float)
     time = check_number("Enter time (month): ", int)
+
+    # User's monthly credit installment is calculated with using special formula and showed the users.
     interest_rate = interest_rate/(100*12)
     formula_top_section = interest_rate*((1 + interest_rate)**time)
     formula_bottom_section = ((1 + interest_rate)**time) - 1
@@ -127,15 +134,17 @@ def vat_calculator():
     """
 
     print("\n--- VAT CALCULATOR ---")
+
+    # Total amount and vat values are wanted from users
     total_amount = check_number("Enter the total amount: ", int)
     vat = check_number("Enter your vat rate (%): ", int)
     while True:
         try:
             decision_input = input("Press 1 to add VAT\n"
-            "Press 2 to remove VAT: ")
+            "Press 2 to remove VAT: ") # It is questioned that users want to remove vat value from total amount or add.
             decision = int(decision_input)
             if decision not in [1,2]:
-                print("Please enter 1 or 2.")
+                print("Please enter 1 or 2.") # Input is validated using try-except blocks to handle non-integer input.
                 continue
             break
         except ValueError:
@@ -145,12 +154,14 @@ def vat_calculator():
         added_amount = total_amount + vat_amount
 
         print("\n--- RESULT ---")
+        # The result is displayed based on the user's preference.
         print(f"Price with VAT added: {added_amount} TL")
     else:
         vat_amount = total_amount * (vat/100)
         removed_amount = total_amount - vat_amount
 
         print("\n--- RESULT ---")
+        # The result is displayed based on the user's preference.
         print(f"Price with VAT removed: {removed_amount} TL")
 
 ##########################################################################
